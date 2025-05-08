@@ -32,7 +32,7 @@ public class ATMUser {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateInput()) {
-                    atmController.checkBalance(textField1.getText());
+                    ATMController.checkBalance(textField1.getText());
                 }
             }
         });
@@ -40,7 +40,7 @@ public class ATMUser {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateInput()) {
-                    atmController.withdraw(textField1.getText());
+                    ATMController.withdraw(textField1.getText());
                 }
             }
         });
@@ -48,7 +48,7 @@ public class ATMUser {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateInput()) {
-                    atmController.deposit(textField1.getText());
+                    ATMController.deposit(textField1.getText());
                 }
             }
         });
