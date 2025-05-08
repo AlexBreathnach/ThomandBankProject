@@ -15,19 +15,31 @@ public class bankOfficer {
         btnCreateAcc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                officerController.createAccount();
+                try {
+                    officerController.createAccount();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(root, "Error: " + ex.getMessage(), "Create Account Failed", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         btnChangeAIR.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                officerController.changeAIR();
+                try {
+                    officerController.changeAIR();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(root, "Error: " + ex.getMessage(), "Change AIR Failed", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         btnChangeODLim.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                officerController.changeOverdraft();
+                try {
+                    officerController.changeOverdraft();
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(root, "Error: " + ex.getMessage(), "Change Overdraft Limit Failed", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         public JPanel getRootPanel() {

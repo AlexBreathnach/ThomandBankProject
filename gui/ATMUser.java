@@ -19,46 +19,63 @@ public class ATMUser {
         btnDepositAcc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                atmController.deposit(textField1.getText())
+                JOptionPane.showMessageDialog(root, "Deposit Account selected");
             }
         });
         btncurrentAcc.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Current Account selected");
-
+                JOptionPane.showMessageDialog(root, "Current Account selected");
             }
         });
         btnCheckBal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                atmController.checkBalance(textField1.getText())
+                if (validateInput()) {
+                    atmController.checkBalance(textField1.getText());
+                }
             }
         });
         btnWithdraw.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                atmController.withdraw(textField1.getText())
+                if (validateInput()) {
+                    atmController.withdraw(textField1.getText());
+                }
             }
         });
         btnDeposit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Deposit Account selected");
-
+                if (validateInput()) {
+                    atmController.deposit(textField1.getText());
+                }
             }
         });
         btnLogout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Logging out...");
-                // Optional: switch panels or exit
+                JOptionPane.showMessageDialog(root, "Logging out...");
             }
         });
+    }
 
-        public JPanel getRootPanel(){
-            return root;
+    private boolean validateInput() {
+        String input = textField1.getText();
+        if (input == null || input.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(root, "Account ID cannot be empty.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            return false;
+        }
+        try {
+            Integer.parseInt(input);
+            return true;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(root, "Account ID must be a number.", "Input Error", JOptionPane.WARNING_MESSAGE);
+            return false;
         }
     }
-}
 
+    public JPanel getRootPanel() {
+        return root;
+    }
+}
