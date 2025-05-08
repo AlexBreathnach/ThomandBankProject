@@ -1,8 +1,9 @@
+package controller;
+
 import javax.swing.*;
 import java.time.LocalDate;
-import yourpackage.ThomondBankGUI;
-import yourpackage.Customer;
-
+import model.ThomondBankGUI;
+import model.BankOfficer;
 
 public class ManagerController {
 
@@ -22,7 +23,7 @@ public class ManagerController {
 
             JOptionPane.showMessageDialog(null, "Bank officer created with ID: " + empNo);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
+            JOptionPane.showMessageDialog(null, "Invalid input: " + e.getMessage());
         }
     }
 }
