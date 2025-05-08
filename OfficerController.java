@@ -1,8 +1,12 @@
+package controller;
+
 import javax.swing.*;
 import java.time.LocalDate;
-import yourpackage.ThomondBankGUI;
-import yourpackage.Customer;
-
+import model.ThomondBankGUI;
+import model.Customer;
+import model.Account;
+import model.DepositAccount;
+import model.CurrentAccount;
 
 public class OfficerController {
 
@@ -21,7 +25,7 @@ public class OfficerController {
 
             JOptionPane.showMessageDialog(null, "Customer created with ID: " + custNo);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
+            JOptionPane.showMessageDialog(null, "Invalid input: " + e.getMessage());
         }
     }
 
@@ -43,7 +47,7 @@ public class OfficerController {
 
             JOptionPane.showMessageDialog(null, "Account created with ID: " + accountId);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
+            JOptionPane.showMessageDialog(null, "Invalid input: " + e.getMessage());
         }
     }
 
@@ -63,7 +67,7 @@ public class OfficerController {
 
             JOptionPane.showMessageDialog(null, "AIR updated.");
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
+            JOptionPane.showMessageDialog(null, "Invalid input: " + e.getMessage());
         }
     }
 
@@ -80,7 +84,7 @@ public class OfficerController {
                 JOptionPane.showMessageDialog(null, "Not a current account.");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Invalid input.");
+            JOptionPane.showMessageDialog(null, "Invalid input: " + e.getMessage());
         }
     }
 
