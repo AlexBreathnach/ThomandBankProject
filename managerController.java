@@ -1,8 +1,7 @@
 import javax.swing.*;
 import java.time.LocalDate;
-package controller;
-import model.ThomondBankGUI;
-import model.BankOfficer;
+import yourpackage.ThomondBankGUI;
+import yourpackage.Customer;
 
 
 public class ManagerController {
@@ -17,11 +16,13 @@ public class ManagerController {
             int empNo = ThomondBankGUI.thomondStaff.size() + 1;
             String jobTitle = "Bank Officer";
 
-            ThomondBankGUI.thomondStaff.add(new bankOfficer(first, last, address, dob, empNo, jobTitle));
+            ThomondBankGUI.thomondStaff.add(
+                    new BankOfficer(first, last, address, dob, empNo, jobTitle)
+            );
+
             JOptionPane.showMessageDialog(null, "Bank officer created with ID: " + empNo);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Invalid input.");
         }
     }
 }
-

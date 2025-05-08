@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.time.LocalDate;
+import yourpackage.ThomondBankGUI;
+import yourpackage.Customer;
+
 
 public class OfficerController {
 
@@ -12,7 +15,10 @@ public class OfficerController {
             LocalDate dob = LocalDate.parse(dobStr);
             int custNo = ThomondBankGUI.customers.size() + 1;
 
-            ThomondBankGUI.customers.add(new Customer(first, last, address, dob, custNo));
+            ThomondBankGUI.customers.add(
+                    new Customer(first, last, address, dob, custNo)
+            );
+
             JOptionPane.showMessageDialog(null, "Customer created with ID: " + custNo);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Invalid input.");
@@ -79,10 +85,9 @@ public class OfficerController {
     }
 
     private static Account findAccountById(int id) {
-        for (Account acc : thomondBankGUI.thomondAccounts) {
+        for (Account acc : ThomondBankGUI.thomondAccounts) {
             if (acc.getId() == id) return acc;
         }
         return null;
     }
 }
-

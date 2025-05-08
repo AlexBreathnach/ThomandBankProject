@@ -1,4 +1,7 @@
 import javax.swing.*;
+import yourpackage.ThomondBankGUI;
+import yourpackage.Customer;
+
 
 public class ATMController {
 
@@ -64,4 +67,3 @@ public class ATMController {
         return null;
     }
 }
-
