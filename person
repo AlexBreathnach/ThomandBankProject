@@ -6,7 +6,13 @@ public abstract class Person {
     protected String address;
     protected LocalDate dob;
 
-    public Person(String firstName, String lastName, String address, LocalDate dob) {
+    public Person(
+            String firstName,
+            String lastName,
+            String address,
+            LocalDate dob)
+    {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
