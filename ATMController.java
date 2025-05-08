@@ -1,7 +1,8 @@
-import javax.swing.*;
-import yourpackage.ThomondBankGUI;
-import yourpackage.Customer;
+package controller;
 
+import javax.swing.*;
+import model.Account;
+import model.ThomondBankGUI;
 
 public class ATMController {
 
